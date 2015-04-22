@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Fwb-Cj-aMO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Fwb-Cj-aMO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -50,9 +50,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ログイン画面" id="Cm8-Kv-bFs"/>
-                    <connections>
-                        <outlet property="LoginButton" destination="yk7-i8-lgR" id="san-Hb-tnj"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -99,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JTH-aK-fh7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2050" y="999"/>
+            <point key="canvasLocation" x="972" y="895"/>
         </scene>
         <!--Home-->
         <scene sceneID="eWQ-n1-y6H">
@@ -127,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vos-LT-Zpv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1977" y="-101"/>
+            <point key="canvasLocation" x="1791" y="100"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="vD3-sn-lys">
@@ -154,7 +151,7 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="名前:" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QhU-Cf-tp0">
-                                <rect key="frame" x="151" y="133" width="156" height="79"/>
+                                <rect key="frame" x="159" y="133" width="156" height="79"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="156" id="vBY-Og-J7M"/>
                                 </constraints>
@@ -162,7 +159,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ID:" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gt2-ob-vcL">
-                                <rect key="frame" x="151" y="198" width="156" height="30"/>
+                                <rect key="frame" x="159" y="198" width="156" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -177,8 +174,8 @@
                                     <constraint firstAttribute="width" constant="85" id="fkF-Xj-b04"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJc-NQ-Dkg">
-                                <rect key="frame" x="270" y="460" width="60" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJc-NQ-Dkg">
+                                <rect key="frame" x="270" y="509" width="60" height="30"/>
                                 <state key="normal" title="更新する">
                                     <color key="titleColor" red="1" green="0.27304231940000001" blue="0.56384525860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -213,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l0P-6i-Y83" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2984" y="-144"/>
+            <point key="canvasLocation" x="972" y="-660"/>
         </scene>
         <!--Contribute View Controller-->
         <scene sceneID="vm6-dY-3Zg">
@@ -277,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bfd-F5-vAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2979" y="927"/>
+            <point key="canvasLocation" x="1791" y="895"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="POr-Ty-dIq">
@@ -297,11 +294,11 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvt-aA-ukk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="266"/>
+            <point key="canvasLocation" x="972" y="100"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="neE-61-jBc"/>
         <segue reference="gnj-H9-Slc"/>
+        <segue reference="neE-61-jBc"/>
     </inferredMetricsTieBreakers>
 </document>

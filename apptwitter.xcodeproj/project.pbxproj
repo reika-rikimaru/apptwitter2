@@ -38,8 +38,8 @@
 		AC01ED131AE0E51700272F11 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		AC01ED141AE0E51700272F11 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		AC01ED151AE0E51700272F11 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		AC4F31071AE4965500FF8BA2 /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimelineViewController.h; path = ../TimelineViewController.h; sourceTree = "<group>"; };
-		AC4F31081AE4965500FF8BA2 /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimelineViewController.m; path = ../TimelineViewController.m; sourceTree = "<group>"; };
+		AC4F31071AE4965500FF8BA2 /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
+		AC4F31081AE4965500FF8BA2 /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
 		AC4F310A1AE4E9E800FF8BA2 /* MyPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageViewController.h; sourceTree = "<group>"; };
 		AC4F310B1AE4E9E800FF8BA2 /* MyPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageViewController.m; sourceTree = "<group>"; };
 		AC4F31101AE50CFB00FF8BA2 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -106,22 +106,9 @@
 		ACAF6C3D1ADFB305009BF492 /* apptwitter */ = {
 			isa = PBXGroup;
 			children = (
-				ACAF6C421ADFB305009BF492 /* AppDelegate.h */,
-				ACAF6C431ADFB305009BF492 /* AppDelegate.m */,
-				ACAF6C481ADFB306009BF492 /* LoginViewController.h */,
-				ACAF6C491ADFB306009BF492 /* LoginViewController.m */,
-				AC4F31071AE4965500FF8BA2 /* TimelineViewController.h */,
-				AC4F31081AE4965500FF8BA2 /* TimelineViewController.m */,
-				AC4F310A1AE4E9E800FF8BA2 /* MyPageViewController.h */,
-				AC4F310B1AE4E9E800FF8BA2 /* MyPageViewController.m */,
-				AC4F31101AE50CFB00FF8BA2 /* ProfileViewController.h */,
-				AC4F31111AE50CFB00FF8BA2 /* ProfileViewController.m */,
-				AC4F31131AE50D0D00FF8BA2 /* ContributeViewController.h */,
-				AC4F31141AE50D0D00FF8BA2 /* ContributeViewController.m */,
+				B6368FE11AE732FF0019BD1D /* Classes */,
 				ACAF6C4B1ADFB306009BF492 /* Main.storyboard */,
 				ACAF6C4E1ADFB306009BF492 /* Images.xcassets */,
-				ACAF6C501ADFB306009BF492 /* LaunchScreen.xib */,
-				ACAF6C451ADFB306009BF492 /* apptwitter.xcdatamodeld */,
 				ACAF6C3E1ADFB305009BF492 /* Supporting Files */,
 			);
 			path = apptwitter;
@@ -130,6 +117,8 @@
 		ACAF6C3E1ADFB305009BF492 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ACAF6C451ADFB306009BF492 /* apptwitter.xcdatamodeld */,
+				ACAF6C501ADFB306009BF492 /* LaunchScreen.xib */,
 				ACAF6C3F1ADFB305009BF492 /* Info.plist */,
 				ACAF6C401ADFB305009BF492 /* main.m */,
 			);
@@ -151,6 +140,81 @@
 				ACAF6C5C1ADFB306009BF492 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B6368FE11AE732FF0019BD1D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B6368FE21AE733E10019BD1D /* Views */,
+				B6368FE31AE733F50019BD1D /* Common */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B6368FE21AE733E10019BD1D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B6368FE41AE7342C0019BD1D /* Login */,
+				B6368FE51AE734640019BD1D /* Timeline */,
+				B6368FE61AE734A00019BD1D /* Mypage */,
+				B6368FE71AE734D30019BD1D /* Profile */,
+				B6368FE81AE735110019BD1D /* Contribute */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B6368FE31AE733F50019BD1D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				ACAF6C421ADFB305009BF492 /* AppDelegate.h */,
+				ACAF6C431ADFB305009BF492 /* AppDelegate.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B6368FE41AE7342C0019BD1D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				ACAF6C481ADFB306009BF492 /* LoginViewController.h */,
+				ACAF6C491ADFB306009BF492 /* LoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B6368FE51AE734640019BD1D /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				AC4F31071AE4965500FF8BA2 /* TimelineViewController.h */,
+				AC4F31081AE4965500FF8BA2 /* TimelineViewController.m */,
+			);
+			path = Timeline;
+			sourceTree = "<group>";
+		};
+		B6368FE61AE734A00019BD1D /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				AC4F310A1AE4E9E800FF8BA2 /* MyPageViewController.h */,
+				AC4F310B1AE4E9E800FF8BA2 /* MyPageViewController.m */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		B6368FE71AE734D30019BD1D /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				AC4F31101AE50CFB00FF8BA2 /* ProfileViewController.h */,
+				AC4F31111AE50CFB00FF8BA2 /* ProfileViewController.m */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		B6368FE81AE735110019BD1D /* Contribute */ = {
+			isa = PBXGroup;
+			children = (
+				AC4F31131AE50D0D00FF8BA2 /* ContributeViewController.h */,
+				AC4F31141AE50D0D00FF8BA2 /* ContributeViewController.m */,
+			);
+			path = Contribute;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

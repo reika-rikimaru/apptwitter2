@@ -14,6 +14,8 @@
 		AC4F310C1AE4E9E800FF8BA2 /* MyPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4F310B1AE4E9E800FF8BA2 /* MyPageViewController.m */; };
 		AC4F31121AE50CFB00FF8BA2 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4F31111AE50CFB00FF8BA2 /* ProfileViewController.m */; };
 		AC4F31151AE50D0D00FF8BA2 /* ContributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4F31141AE50D0D00FF8BA2 /* ContributeViewController.m */; };
+		AC5A440E1AE77AF400BBE11E /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5A440C1AE77AF400BBE11E /* TableViewCell.m */; };
+		AC5A440F1AE77AF400BBE11E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC5A440D1AE77AF400BBE11E /* TableViewCell.xib */; };
 		ACAF6C411ADFB305009BF492 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACAF6C401ADFB305009BF492 /* main.m */; };
 		ACAF6C441ADFB305009BF492 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACAF6C431ADFB305009BF492 /* AppDelegate.m */; };
 		ACAF6C471ADFB306009BF492 /* apptwitter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACAF6C451ADFB306009BF492 /* apptwitter.xcdatamodeld */; };
@@ -46,6 +48,9 @@
 		AC4F31111AE50CFB00FF8BA2 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		AC4F31131AE50D0D00FF8BA2 /* ContributeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContributeViewController.h; sourceTree = "<group>"; };
 		AC4F31141AE50D0D00FF8BA2 /* ContributeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContributeViewController.m; sourceTree = "<group>"; };
+		AC5A440B1AE77AF400BBE11E /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		AC5A440C1AE77AF400BBE11E /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		AC5A440D1AE77AF400BBE11E /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		ACAF6C3B1ADFB305009BF492 /* apptwitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = apptwitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAF6C3F1ADFB305009BF492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACAF6C401ADFB305009BF492 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,6 +87,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC5A440A1AE77AAD00BBE11E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AC5A440B1AE77AF400BBE11E /* TableViewCell.h */,
+				AC5A440C1AE77AF400BBE11E /* TableViewCell.m */,
+				AC5A440D1AE77AF400BBE11E /* TableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		ACAF6C321ADFB305009BF492 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +199,7 @@
 		B6368FE51AE734640019BD1D /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				AC5A440A1AE77AAD00BBE11E /* Cell */,
 				AC4F31071AE4965500FF8BA2 /* TimelineViewController.h */,
 				AC4F31081AE4965500FF8BA2 /* TimelineViewController.m */,
 			);
@@ -299,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC01ED171AE0E51700272F11 /* TwitterKitResources.bundle in Resources */,
+				AC5A440F1AE77AF400BBE11E /* TableViewCell.xib in Resources */,
 				ACAF6C4D1ADFB306009BF492 /* Main.storyboard in Resources */,
 				ACAF6C521ADFB306009BF492 /* LaunchScreen.xib in Resources */,
 				ACAF6C4F1ADFB306009BF492 /* Images.xcassets in Resources */,
@@ -340,6 +357,7 @@
 				ACAF6C441ADFB305009BF492 /* AppDelegate.m in Sources */,
 				ACAF6C4A1ADFB306009BF492 /* LoginViewController.m in Sources */,
 				AC4F31151AE50D0D00FF8BA2 /* ContributeViewController.m in Sources */,
+				AC5A440E1AE77AF400BBE11E /* TableViewCell.m in Sources */,
 				AC4F310C1AE4E9E800FF8BA2 /* MyPageViewController.m in Sources */,
 				AC4F31121AE50CFB00FF8BA2 /* ProfileViewController.m in Sources */,
 				ACAF6C411ADFB305009BF492 /* main.m in Sources */,

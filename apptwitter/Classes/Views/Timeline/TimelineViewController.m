@@ -9,7 +9,7 @@
 #import "TimelineViewController.h"
 #import "ProfileViewController.h"
 #import "ContributeViewController.h"
-#import "TableViewCell.h"
+#import "TimelineTableViewCell.h"
 
 @interface TimelineViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -24,7 +24,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    [_tableView registerNib:[UINib nibWithNibName:@"TableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    [_tableView registerNib:[UINib nibWithNibName:@"TimelineTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
 
     [self.tabBarController.navigationItem setHidesBackButton:YES];
      self.tabBarController.navigationItem.title = @"Home画面";
@@ -57,9 +57,9 @@
 //テーブルに表示するセルを返す
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    TimelineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     if (cell == nil) {
-        cell = [[TableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
+        cell = [[TimelineTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
     }
     return cell;
 }

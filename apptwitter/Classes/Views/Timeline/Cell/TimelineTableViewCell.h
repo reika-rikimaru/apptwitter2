@@ -8,20 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TableViewCell : UITableViewCell {
+@interface TimelineTableViewCell : UITableViewCell {
+    
     UIImageView *profileView;
     UILabel *userName;
     UILabel *timeLabel;
-    UITextView *tweet;
+    UILabel *tweet;
     
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileView;
-
 @property (weak, nonatomic) IBOutlet UILabel *userName;
-
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *tweet;
 
 @end

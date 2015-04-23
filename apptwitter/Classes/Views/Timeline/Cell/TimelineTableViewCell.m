@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 reika.rikimaru. All rights reserved.
 //
 
-#import "TableViewCell.h"
+#import "TimelineTableViewCell.h"
 
-@interface TableViewCell ()
+@interface TimelineTableViewCell ()
 
 @end
 
-@implementation TableViewCell
+@implementation TimelineTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code

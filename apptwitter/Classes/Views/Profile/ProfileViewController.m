@@ -8,6 +8,7 @@
 
 #import "ProfileViewController.h"
 #import "TimelineViewController.h"
+#import <UIKit/UIKit.h>
 
 @interface ProfileViewController ()
 
@@ -16,11 +17,12 @@
 @implementation ProfileViewController
 
 - (void)viewDidLoad {
-   
+    [super viewDidLoad];
     UIBarButtonItem * backButton = [[UIBarButtonItem alloc] initWithTitle:@"戻る"
                                                                     style:UIBarButtonItemStylePlain
                                                                    target:self
                                                                    action:@selector(dismissPlofileViewController)];
+    NSLog(@"konnni");
     self.navigationItem.leftBarButtonItem = backButton;
     self.navigationItem.title = @"編集画面";
 }

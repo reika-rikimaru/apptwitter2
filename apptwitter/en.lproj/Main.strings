@@ -1,0 +1,39 @@
+
+/* Class = "UITabBarItem"; title = " MyPage"; ObjectID = "7m1-oe-q60"; */
+"7m1-oe-q60.title" = " MyPage";
+
+/* Class = "UINavigationItem"; title = " MyPage"; ObjectID = "8EO-mi-XrT"; */
+"8EO-mi-XrT.title" = " MyPage";
+
+/* Class = "UITextField"; text = "自己紹介:"; ObjectID = "AfG-1M-Obe"; */
+"AfG-1M-Obe.text" = "自己紹介:";
+
+/* Class = "UINavigationItem"; title = "ログイン画面"; ObjectID = "Cm8-Kv-bFs"; */
+"Cm8-Kv-bFs.title" = "ログイン画面";
+
+/* Class = "UITextField"; text = "ほにゃほにゃぺっ"; ObjectID = "GfU-ED-mnb"; */
+"GfU-ED-mnb.text" = "ほにゃほにゃぺっ";
+
+/* Class = "UITextField"; text = "名前"; ObjectID = "GwH-rg-Jef"; */
+"GwH-rg-Jef.text" = "名前";
+
+/* Class = "UIButton"; normalTitle = "投稿する"; ObjectID = "Gxi-sC-o54"; */
+"Gxi-sC-o54.normalTitle" = "投稿する";
+
+/* Class = "UITextField"; text = "名前:"; ObjectID = "QhU-Cf-tp0"; */
+"QhU-Cf-tp0.text" = "名前:";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "S8B-C1-jcO"; */
+"S8B-C1-jcO.title" = "Home";
+
+/* Class = "UIBarButtonItem"; title = "Profile"; ObjectID = "diV-tg-1ba"; */
+"diV-tg-1ba.title" = "Profile";
+
+/* Class = "UITextField"; text = "ID:"; ObjectID = "gt2-ob-vcL"; */
+"gt2-ob-vcL.text" = "ID:";
+
+/* Class = "UIButton"; normalTitle = "更新する"; ObjectID = "wJc-NQ-Dkg"; */
+"wJc-NQ-Dkg.normalTitle" = "更新する";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "yk7-i8-lgR"; */
+"yk7-i8-lgR.normalTitle" = "Login";

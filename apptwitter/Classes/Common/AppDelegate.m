@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <Fabric/Fabric.h>
+#import <TwitterKit/TwitterKit.h>
 
 
 @interface AppDelegate ()
@@ -14,10 +16,13 @@
 @end
 
 @implementation AppDelegate
-
+//clientId
+static NSString * const kOauth2ClientClientId = @""; //クライアントIDを設定
+//Client Secret
+static NSString * const kOauth2ClientClientSecret = @"xxx"; //クライアントシークレットを設定
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-   
+    [Fabric with:@[TwitterKit]];
     return YES;
 }
 

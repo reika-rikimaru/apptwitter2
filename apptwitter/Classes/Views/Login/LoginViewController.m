@@ -6,13 +6,17 @@
 //  Copyright (c) 2015年 reika.rikimaru. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "TimelineViewController.h"
 #import "TimelineTableViewCell.h"
+#import "MyPageViewController.h"
+#import "MyPageTableViewCell.h"
 #import <TwitterKit/TwitterKit.h>
 
 @interface LoginViewController ()
 
+- (void)setShowTimeline;
 @end
 
 @implementation LoginViewController
@@ -25,7 +29,7 @@
             NSLog(@"Error : %@", error);
         } else {
             NSLog(@"UserName : %@", session.userName);
-            [self showTimelineViewController];
+            [self setShowTimeline];
         }
     }];
 
@@ -40,10 +44,9 @@
 }
 
 
-- (void)showTimelineViewController
-{
-    TimelineViewController  *timelineViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"TimelineViewController"];
-    [self.navigationController pushViewController:timelineViewController animated:YES];
+- (void)setShowTimeline {
+    [[AppDelegate appDelegate] setShowLoggedInViewController];
 }
+
 
 @end

@@ -26,11 +26,10 @@ NSArray *tweetArray;
     
     [super viewDidLoad];
 
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    [self.tableView registerNib:[UINib nibWithNibName:@"TimelineTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    self.UITableView.delegate = self;
+    self.UITableView.dataSource = self;
+    [self.UITableView registerNib:[UINib nibWithNibName:@"TimelineTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     [self.tabBarController.navigationItem setHidesBackButton:YES];
-    
     NSMutableArray *userNameArray;
     NSMutableArray *tweetTextArray;
     userNameArray = [[NSMutableArray alloc] initWithCapacity:0];
@@ -46,11 +45,18 @@ NSArray *tweetArray;
      //profileボタンを追加
     UIBarButtonItem * profileButton = [[UIBarButtonItem alloc] initWithTitle:@"Profile"
                                                                        style:UIBarButtonItemStylePlain target:self
-                                                                      action:@selector(showProfileViewController)];
+                                                                      action:@selector
+                                                                         (showProfileViewController)];
     self.tabBarController.navigationItem.leftBarButtonItem = profileButton;
-    self.tabBarController.navigationItem.title = @"Home画面";
+    
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.tabBarController.navigationItem.title = @"Home画面";
+//    self.tabBarController.navigationController.na;
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -101,7 +107,7 @@ NSArray *tweetArray;
                         tweetArray = [NSJSONSerialization JSONObjectWithData:responseData
                                                                      options: NSJSONReadingMutableLeaves error:&jsonError];
                         
-                        [self.tableView reloadData];
+                        [self.UITableView reloadData];
                     }
                 }];
             } else {
@@ -111,6 +117,7 @@ NSArray *tweetArray;
 
     }];
 }
+
 
 //アカウント情報を設定画面で編集するかを確認するalert View表示
 -(void)alertAccountProblem {
@@ -138,22 +145,48 @@ NSArray *tweetArray;
     if (cell == nil) {
         cell = [[TimelineTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
     }
-
-
     NSDictionary *tweetMessage = [tweetArray objectAtIndex:[indexPath row]];
     //ユーザ情報を格納するJSONを解析し、NSDictionaryに
     NSDictionary *userInfo = [tweetMessage objectForKey:@"user"];
     //投稿時間を格納するJSONを解析し、NSDictionaryに
+    
     cell.tweet.text = [tweetMessage objectForKey:@"text"];
+    [cell.tweet sizeToFit];
+    CGRect rect = cell.tweet.frame;
+    rect.size.height = CGRectGetHeight(cell.tweet.frame);
+    cell.tweet.frame = rect;
+    
+    cell.tweet.backgroundColor = [UIColor blueColor];
     cell.userName.text = [userInfo objectForKey:@"screen_name"];
-    cell.timeLabel.text = [tweetMessage objectForKey:@"created_at"];
-
-    NSLog(@"tweetMessage%@", tweetMessage);
+    NSURL *profURL = [NSURL URLWithString:@"http://pbs.twimg.com/profile_images/592495079169765378/-UzhitaR_normal.jpg"];
+    NSData *profData = [NSData dataWithContentsOfURL:profURL];
+    UIImage *profImage = [UIImage imageWithData:profData];
+    cell.profileView.image  = profImage;
+    
+    NSString *inputStr = [tweetMessage objectForKey:@"created_at"];
+    NSString *outputStr = [self twitterCreatedAtToFormatString:inputStr format:@"yyyy/MM/dd HH:mm:ss"];
+    cell.timeLabel.text = [self twitterCreatedAtToFormatString:inputStr format:@"yyyy/MM/dd HH:mm:ss"];
     
     return cell;
 
 }
 
+- (NSString *)twitterCreatedAtToFormatString:(NSString * )dateString format:(NSString *)format {
+    //引数をNSDateに変換
+    NSDateFormatter *inputFormat = [[NSDateFormatter alloc] init];
+    [inputFormat setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+    [inputFormat setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
+    NSDate *date = [inputFormat dateFromString:dateString];
+    //NSDateを文字列に変換
+    NSDateFormatter *outputFormat = [[NSDateFormatter alloc] init];
+    [outputFormat setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"]];
+    [outputFormat setDateFormat:format];
+    return [outputFormat stringFromDate:date];
+    
+}
+
+//セルのスタイルを標準のものに指定
+static NSString *CellIdentifier = @"TweetCell";
 
 
 //セルの高さを指定

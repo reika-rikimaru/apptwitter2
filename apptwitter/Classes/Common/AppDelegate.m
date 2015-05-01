@@ -23,6 +23,12 @@ static NSString * const kOauth2ClientClientSecret = @"xxx"; //クライアント
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Fabric with:@[TwitterKit]];
+
+    
+    
+//    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+//    UIViewController *secondViewController = [navigationController.storyboard instantiateViewControllerWithIdentifier:@"TimelineViewController"];
+//    [navigationController pushViewController:secondViewController animated:NO];
     return YES;
 }
 
@@ -42,6 +48,24 @@ static NSString * const kOauth2ClientClientSecret = @"xxx"; //クライアント
     [self saveContext];
 }
 
+#pragma mark Public Methods
+
++ (AppDelegate *)appDelegate {
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+}
+
+- (void)setShowLoggedInViewController {
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    UITabBarController *tweetTab = [[UITabBarController alloc] init];
+    UIViewController *secondViewController = [navigationController.storyboard instantiateViewControllerWithIdentifier:@"TimelineViewController"];
+    UIViewController *secondViewController2 = [navigationController.storyboard instantiateViewControllerWithIdentifier:@"MyPageViewController"];
+    NSArray *viewTweet = [NSArray arrayWithObjects:secondViewController, secondViewController2, nil];
+    [tweetTab setViewControllers:viewTweet animated:NO];
+    navigationController = [[UINavigationController alloc] initWithRootViewController:tweetTab];
+    navigationController.navigationBar.translucent = NO;
+    navigationController.tabBarController.tabBar.translucent = NO;
+    self.window.rootViewController = navigationController;
+}
 #pragma mark - Core Data stack
 
 @synthesize managedObjectContext = _managedObjectContext;

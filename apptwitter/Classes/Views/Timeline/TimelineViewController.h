@@ -12,11 +12,8 @@
 
 @interface TimelineViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIImageView *profileView;
-@property (weak, nonatomic) IBOutlet UILabel *userName;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *tweet;
+
+@property (weak, nonatomic) IBOutlet UITableView *UITableView;
 
 
 @end

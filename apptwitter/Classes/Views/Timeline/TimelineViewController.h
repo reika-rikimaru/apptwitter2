@@ -14,6 +14,6 @@
 
 
 @property (weak, nonatomic) IBOutlet UITableView *UITableView;
-
+@property (weak, nonatomic) IBOutlet UIButton *tweetCB;
 
 @end

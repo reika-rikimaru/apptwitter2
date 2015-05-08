@@ -8,7 +8,6 @@
 
 #import "TimelineViewController.h"
 #import "ProfileViewController.h"
-#import "ContributeViewController.h"
 #import "TimelineTableViewCell.h"
 #import "LoginViewController.h"
 #import <TwitterKit/TwitterKit.h>
@@ -34,27 +33,26 @@ NSArray *tweetArray;
     NSMutableArray *tweetTextArray;
     userNameArray = [[NSMutableArray alloc] initWithCapacity:0];
     tweetTextArray = [[NSMutableArray alloc] initWithCapacity:0];
-    
+
     [self getTimeline];
      //投稿ボタンを追加
-    UIBarButtonItem * contributeButton = [[UIBarButtonItem alloc] initWithTitle:@"投稿"
+    UIBarButtonItem * tweetCB = [[UIBarButtonItem alloc] initWithTitle:@"tweet"
                                                                           style:UIBarButtonItemStylePlain target:self
-                                                                         action:@selector(showContributeViewController)];
-    self.tabBarController.navigationItem.rightBarButtonItem = contributeButton;
+                                                                         action:@selector(tappedTweetCB:)];
+    self.tabBarController.navigationItem.rightBarButtonItem = tweetCB;
+    
     
      //profileボタンを追加
-    UIBarButtonItem * profileButton = [[UIBarButtonItem alloc] initWithTitle:@"Profile"
+    UIBarButtonItem * myPB = [[UIBarButtonItem alloc] initWithTitle:@"Profile"
                                                                        style:UIBarButtonItemStylePlain target:self
-                                                                      action:@selector
-                                                                         (showProfileViewController)];
-    self.tabBarController.navigationItem.leftBarButtonItem = profileButton;
+                                                                      action:@selector(showProfileViewController)];
+    self.tabBarController.navigationItem.leftBarButtonItem = myPB;
     
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.tabBarController.navigationItem.title = @"Home画面";
-//    self.tabBarController.navigationController.na;
     
 }
 
@@ -66,7 +64,6 @@ NSArray *tweetArray;
     //タイムラインの取得
     ACAccountStore *store = [[ACAccountStore alloc] init];
     ACAccountType *twitterAccountType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-
     NSString *apiURL = @"https://api.twitter.com/1.1/statuses/home_timeline.json";
     [store requestAccessToAccountsWithType:twitterAccountType options:nil completion:^(BOOL granted, NSError *error) {
         if (!granted) {
@@ -106,6 +103,7 @@ NSArray *tweetArray;
                         NSError *jsonError;
                         tweetArray = [NSJSONSerialization JSONObjectWithData:responseData
                                                                      options: NSJSONReadingMutableLeaves error:&jsonError];
+                        NSLog(@"%@", tweetArray);
                         
                         [self.UITableView reloadData];
                     }
@@ -150,23 +148,21 @@ NSArray *tweetArray;
     NSDictionary *userInfo = [tweetMessage objectForKey:@"user"];
     //投稿時間を格納するJSONを解析し、NSDictionaryに
     
+    
     cell.tweet.text = [tweetMessage objectForKey:@"text"];
-    [cell.tweet sizeToFit];
     CGRect rect = cell.tweet.frame;
     rect.size.height = CGRectGetHeight(cell.tweet.frame);
-    cell.tweet.frame = rect;
-    
-    cell.tweet.backgroundColor = [UIColor blueColor];
+//    cell.tweet.backgroundColor = [UIColor redColor];
     cell.userName.text = [userInfo objectForKey:@"screen_name"];
-    NSURL *profURL = [NSURL URLWithString:@"http://pbs.twimg.com/profile_images/592495079169765378/-UzhitaR_normal.jpg"];
+    NSString *urlString = [userInfo objectForKey:@"profile_image_url"];
+    NSURL *profURL = [NSURL URLWithString:urlString];
     NSData *profData = [NSData dataWithContentsOfURL:profURL];
     UIImage *profImage = [UIImage imageWithData:profData];
     cell.profileView.image  = profImage;
-    
     NSString *inputStr = [tweetMessage objectForKey:@"created_at"];
     NSString *outputStr = [self twitterCreatedAtToFormatString:inputStr format:@"yyyy/MM/dd HH:mm:ss"];
     cell.timeLabel.text = [self twitterCreatedAtToFormatString:inputStr format:@"yyyy/MM/dd HH:mm:ss"];
-    
+    [cell.tweet sizeToFit];
     return cell;
 
 }
@@ -184,15 +180,22 @@ NSArray *tweetArray;
     return [outputFormat stringFromDate:date];
     
 }
-
-//セルのスタイルを標準のものに指定
-static NSString *CellIdentifier = @"TweetCell";
+//
+////セルのスタイルを標準のものに指定
+//static NSString *CellIdentifier = @"TweetCell";
 
 
 //セルの高さを指定
 -(CGFloat)tableView:(UITableView*)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
+    return 130;
+}
+
+-(IBAction)tappedTweetCB:(id)sender{
+    
+    SLComposeViewController *twitterPostVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [twitterPostVC setInitialText:@"本日は給料日です"];
+    [self presentViewController:twitterPostVC animated:YES completion:nil];
 }
 
 #pragma mark - UIButton Touch Handler
@@ -200,17 +203,17 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
    //モーダル表示
 
     ProfileViewController *profileViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:profileViewController];
-    [self presentViewController:navigationController animated:YES completion:nil];
-
-}
-
-- (void)showContributeViewController {
-    //モーダル表示
+    profileViewController.userName = @"name";
+    profileViewController.introduce = @"hoge";
+    NSURL *profURL = [NSURL URLWithString:@"http://pbs.twimg.com/profile_images/592495079169765378/-UzhitaR_normal.jpg"];
+    NSData *profData = [NSData dataWithContentsOfURL:profURL];
+    UIImage *profImage = [UIImage imageWithData:profData];
+    profileViewController.profImage = profImage;
     
-    ContributeViewController *contributeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ContributeViewController"];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:contributeViewController];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:profileViewController];
+    
+    
     [self presentViewController:navigationController animated:YES completion:nil];
-}
 
+}
 @end

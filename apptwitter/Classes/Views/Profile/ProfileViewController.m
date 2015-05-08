@@ -25,6 +25,9 @@
     NSLog(@"konnni");
     self.navigationItem.leftBarButtonItem = backButton;
     self.navigationItem.title = @"編集画面";
+    self.IDlabel.text = self.userName;
+    self.myIntroduce.text = self.introduce;
+    self.profView.image = self.profImage;
 }
 
 - (void)didReceiveMemoryWarning {

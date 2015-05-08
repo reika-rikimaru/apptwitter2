@@ -29,7 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="投稿内容を表示します" lineBreakMode="headTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTw-rX-K1i">
-                        <rect key="frame" x="86" y="31" width="215" height="101"/>
+                        <rect key="frame" x="81" y="33" width="231" height="94"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                 <outlet property="tweet" destination="KTw-rX-K1i" id="hkF-el-n2G"/>
                 <outlet property="userName" destination="Mc7-Ta-oL7" id="aff-ld-vk3"/>
             </connections>
-            <point key="canvasLocation" x="387" y="379"/>
+            <point key="canvasLocation" x="387" y="376"/>
         </tableViewCell>
     </objects>
 </document>

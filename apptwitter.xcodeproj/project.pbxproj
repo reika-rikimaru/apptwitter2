@@ -11,7 +11,6 @@
 		AC4F31091AE4965500FF8BA2 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4F31081AE4965500FF8BA2 /* TimelineViewController.m */; };
 		AC4F310C1AE4E9E800FF8BA2 /* MyPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4F310B1AE4E9E800FF8BA2 /* MyPageViewController.m */; };
 		AC4F31121AE50CFB00FF8BA2 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4F31111AE50CFB00FF8BA2 /* ProfileViewController.m */; };
-		AC4F31151AE50D0D00FF8BA2 /* ContributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4F31141AE50D0D00FF8BA2 /* ContributeViewController.m */; };
 		AC50B3201AE88C5F009F2A09 /* MyPageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC50B31E1AE88C5F009F2A09 /* MyPageTableViewCell.m */; };
 		AC50B3211AE88C5F009F2A09 /* MyPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC50B31F1AE88C5F009F2A09 /* MyPageTableViewCell.xib */; };
 		AC5A440E1AE77AF400BBE11E /* TimelineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5A440C1AE77AF400BBE11E /* TimelineTableViewCell.m */; };
@@ -49,8 +48,6 @@
 		AC4F310B1AE4E9E800FF8BA2 /* MyPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageViewController.m; sourceTree = "<group>"; usesTabs = 0; };
 		AC4F31101AE50CFB00FF8BA2 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		AC4F31111AE50CFB00FF8BA2 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		AC4F31131AE50D0D00FF8BA2 /* ContributeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContributeViewController.h; sourceTree = "<group>"; };
-		AC4F31141AE50D0D00FF8BA2 /* ContributeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContributeViewController.m; sourceTree = "<group>"; };
 		AC50B31D1AE88C5F009F2A09 /* MyPageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageTableViewCell.h; sourceTree = "<group>"; };
 		AC50B31E1AE88C5F009F2A09 /* MyPageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageTableViewCell.m; sourceTree = "<group>"; };
 		AC50B31F1AE88C5F009F2A09 /* MyPageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPageTableViewCell.xib; sourceTree = "<group>"; };
@@ -201,7 +198,6 @@
 				B6368FE51AE734640019BD1D /* Timeline */,
 				B6368FE61AE734A00019BD1D /* Mypage */,
 				B6368FE71AE734D30019BD1D /* Profile */,
-				B6368FE81AE735110019BD1D /* Contribute */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,15 +247,6 @@
 				AC4F31111AE50CFB00FF8BA2 /* ProfileViewController.m */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		B6368FE81AE735110019BD1D /* Contribute */ = {
-			isa = PBXGroup;
-			children = (
-				AC4F31131AE50D0D00FF8BA2 /* ContributeViewController.h */,
-				AC4F31141AE50D0D00FF8BA2 /* ContributeViewController.m */,
-			);
-			path = Contribute;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,7 +374,6 @@
 				ACAF6C441ADFB305009BF492 /* AppDelegate.m in Sources */,
 				ACAF6C4A1ADFB306009BF492 /* LoginViewController.m in Sources */,
 				AC50B3201AE88C5F009F2A09 /* MyPageTableViewCell.m in Sources */,
-				AC4F31151AE50D0D00FF8BA2 /* ContributeViewController.m in Sources */,
 				AC5A440E1AE77AF400BBE11E /* TimelineTableViewCell.m in Sources */,
 				AC4F310C1AE4E9E800FF8BA2 /* MyPageViewController.m in Sources */,
 				AC4F31121AE50CFB00FF8BA2 /* ProfileViewController.m in Sources */,

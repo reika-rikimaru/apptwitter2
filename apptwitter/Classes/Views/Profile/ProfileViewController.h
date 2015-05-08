@@ -10,6 +10,11 @@
 
 @interface ProfileViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIButton *UpdateButton;
+@property (weak, nonatomic) IBOutlet UIImageView *profView;
+@property (weak, nonatomic) IBOutlet UILabel *IDlabel;
+@property (weak, nonatomic) IBOutlet UILabel *myIntroduce;
+@property (nonatomic, strong) NSString *userName;
+@property (nonatomic, strong) NSString *introduce;
+@property (nonatomic, strong) UIImage *profImage;
 
 @end
